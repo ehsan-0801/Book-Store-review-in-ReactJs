@@ -1,7 +1,11 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import useReview from '../../hooks/useReview';
+import BookReview from '../BookReview/BookReview';
+import Customlink from '../Customlink/Customlink';
 import Book from '../Images/Book.jpg';
 const Home = () => {
+    const [reviews, setReviews] = useReview();
     return (
         <div>
             <div className="container my-5">
@@ -20,7 +24,18 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="my-5">
-                    <h1 className="text-center">Customer Reviews</h1>
+                    <h1 className="text-center my-2">Customer Reviews(3)</h1>
+                    <div className="container">
+                        {
+                            reviews.slice(0, 3).map((review) => <BookReview
+                                key={ review.review_id }
+                                review={ review }
+                            ></BookReview>)
+                        }
+                        <Button variant="outline-primary" className="px-3">
+                            <Customlink className="mx-4" to="/reviews">SEE MORE REVIEWS</Customlink>
+                        </Button>
+                    </div>
                 </div>
             </div>
         </div>
