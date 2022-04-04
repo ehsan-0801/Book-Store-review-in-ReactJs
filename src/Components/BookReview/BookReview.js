@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card } from 'react-bootstrap';
 import './BookReview.css'
 const BookReview = ({ review }) => {
     const { reviewer_name, rating, reviewtext } = review;

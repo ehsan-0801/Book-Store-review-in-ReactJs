@@ -4,6 +4,7 @@ import useReview from '../../hooks/useReview';
 import BookReview from '../BookReview/BookReview';
 import Customlink from '../Customlink/Customlink';
 import Book from '../Images/Book.jpg';
+import './Home.css'
 const Home = () => {
     const [reviews, setReviews] = useReview();
     return (
@@ -32,9 +33,10 @@ const Home = () => {
                                 review={ review }
                             ></BookReview>)
                         }
-                        <Button variant="outline-primary" className="px-3">
-                            <Customlink className="mx-4" to="/reviews">SEE MORE REVIEWS</Customlink>
-                        </Button>
+
+                    </div>
+                    <div className="my-5">
+                        <Customlink className="mx-auto btn btn-outline-secondary w-25" to="/reviews">SEE MORE REVIEWS</Customlink>
                     </div>
                 </div>
             </div>
